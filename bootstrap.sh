@@ -6,7 +6,7 @@ apt-get update -y
 apt-get install nginx curl vim wget screen -y
 ln -s /usr/bin/vim /usr/bin/nvim
 
-tee ~/.vimrc <<EOF
+tee ~/.vimrc <<'EOF'
 syntax off set nohlsearch set t_C
 set laststatus=0
 set expandtab
@@ -43,7 +43,7 @@ autocmd FileType make setlocal sts=8
 autocmd FileType make setlocal sw=8
 EOF
 
-tee ~/.bashrc <<EOF
+tee ~/.bashrc <<'EOF'
 PS1='[\u@\h \W ${VIRTUAL_ENV##*/}]\$ '
 
 set -o vi
@@ -65,7 +65,7 @@ cp karrug-com/index.html /var/www/html/index.html
 
 rm /etc/nginx/sites-enabled/karrug-com
 
-tee /etc/nginx/sites-available/karrug-com <<EOF
+tee /etc/nginx/sites-available/karrug-com <<'EOF'
 server {
   listen       80;
   server_name  _;
