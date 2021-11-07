@@ -3,7 +3,7 @@
 set -euxo pipefail
 
 apt-get update -y
-apt-get install nginx curl vim wget screen -y
+apt-get install nginx curl vim wget screen git -y
 ln -s /usr/bin/vim /usr/bin/nvim
 
 tee ~/.vimrc <<'EOF'
@@ -63,7 +63,7 @@ EOF
 git clone https://github.com/karrug/karrug-com
 cp karrug-com/index.html /var/www/html/index.html
 
-rm /etc/nginx/sites-enabled/karrug-com
+rm /etc/nginx/sites-enabled/default
 
 tee /etc/nginx/sites-available/karrug-com <<'EOF'
 server {
